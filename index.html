@@ -1,193 +1,149 @@
-# Redefine complete_html (since variable was lost after previous code cell)
-complete_html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shiyana Jayanesan Shylaja | Portfolio 3</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #eef2f3;
+      background-color: #f5f5f5;
       color: #333;
     }
     header {
       background: #4a69bd;
       color: white;
-      padding: 20px;
       text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+      padding: 20px;
     }
     nav {
       background: #1e3799;
-      display: flex;
-      justify-content: center;
+      text-align: center;
+      padding: 10px 0;
     }
     nav a {
       color: white;
       text-decoration: none;
-      padding: 14px 20px;
-      display: inline-block;
-      transition: background 0.3s;
+      padding: 10px 15px;
+      font-weight: bold;
     }
     nav a:hover {
       background: #60a3bc;
+      border-radius: 5px;
     }
     .container {
+      max-width: 1000px;
+      margin: 20px auto;
       padding: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .card {
       background: white;
       border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    .card h2 {
-      margin-top: 0;
+    h2 {
       color: #1e3799;
+    }
+    .charts img {
+      max-width: 48%;
+      margin: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     .charts {
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
       flex-wrap: wrap;
-      margin-top: 20px;
-    }
-    .charts img {
-      flex: 1 1 45%;
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      justify-content: space-around;
     }
     footer {
       text-align: center;
-      padding: 15px;
-      background-color: #4a69bd;
+      padding: 10px;
+      background: #4a69bd;
       color: white;
       margin-top: 20px;
     }
-    @media (max-width: 768px) {
-      .charts {
-        flex-direction: column;
-      }
-      .charts img {
-        flex: 1 1 100%;
-      }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .links a {
+      color: #1e3799;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .links a:hover {
+      text-decoration: underline;
     }
   </style>
-  <script>
-    function openTab(tabId) {
-      var contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => content.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
 </head>
 <body>
   <header>
     <h1>Shiyana Jayanesan Shylaja</h1>
-    <p>Professional Portfolio - Artifact 3</p>
+    <p>Professional Portfolio - AI/ML Projects</p>
   </header>
+
   <nav>
-    <a href="javascript:void(0)" onclick="openTab('home')">Home</a>
-    <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a>
-    <a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2</a>
-    <a href="javascript:void(0)" onclick="openTab('artifact3')">Artifact 3</a>
-    <a href="javascript:void(0)" onclick="openTab('activity')">Activity</a>
+    <a href="#home">Home</a>
+    <a href="#artifact3">Artifact 3</a>
+    <a href="#activity">Activity</a>
+    <a href="#reflection">Reflection</a>
   </nav>
 
-  <div class="container">
-    <!-- Home Tab -->
-    <div id="home" class="tab-content active">
-      <div class="card">
-        <h2>Welcome</h2>
-        <p>Explore my AI/ML professional portfolio featuring coursework projects, practical assignments, and key learning activities from AIML-500. Use the navigation tabs to view individual artifacts and class activities.</p>
-      </div>
+  <!-- HOME -->
+  <div class="container" id="home">
+    <h2>Welcome to My Portfolio</h2>
+    <p>
+      This portfolio highlights my key coursework and AI/ML projects completed in AIML-500, showcasing technical
+      expertise, data analysis, and visualization skills. Below are links to my previous artifacts:
+    </p>
+    <div class="links">
+      <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1: Professional Portfolio</a>
+      <a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2: Advanced AI/ML Skills</a>
     </div>
+  </div>
 
-    <!-- Artifact 3 Tab -->
-    <div id="artifact3" class="tab-content">
-      <div class="card">
-        <h2>Artifact 3: Clustering Analysis with K-Means</h2>
-        <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
-        <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
-        <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
-        <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
-        <p><strong>Value Proposition:</strong> Demonstrates mastery of unsupervised learning and data visualization, enabling actionable insights from unlabeled data.</p>
-        <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72.</p>
-        <div class="charts">
-          <div>
-            <img src="elbow-method.png" alt="Elbow Method Graph">
-            <p style="text-align:center;">Elbow Method Graph</p>
-          </div>
-          <div>
-            <img src="clusters.png" alt="Cluster Visualization">
-            <p style="text-align:center;">Cluster Visualization</p>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Reflection</h2>
-        <p>
-          I selected this artifact because it demonstrates a unique machine learning skill—unsupervised clustering—that
-          complements my earlier supervised learning activities. The 3.3 Training Methods Coach activity helped me
-          understand the theory behind model training, which I implemented in this clustering project.
-          Peer feedback suggested including visual evidence of model evaluation, so I added the Elbow Method and
-          cluster visualization graphs. This artifact now clearly shows the clustering process, evaluation metrics,
-          and actionable insights from raw data.
-        </p>
-      </div>
+  <!-- ARTIFACT 3 -->
+  <div class="container" id="artifact3">
+    <h2>Artifact 3: Clustering Analysis with K-Means</h2>
+    <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
+    <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
+    <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
+    <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
+    <p><strong>Value Proposition:</strong> Demonstrates mastery of unsupervised learning and data visualization, enabling actionable insights from unlabeled data.</p>
+    <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72.</p>
+    <div class="charts">
+      <img src="elbow-method.png" alt="Elbow Method Graph">
+      <img src="clusters.png" alt="Cluster Visualization">
     </div>
+  </div>
 
-    <!-- Activity Tab -->
-    <div id="activity" class="tab-content">
-      <div class="card">
-        <h2>Class Activity: Training Methods Coach</h2>
-        <p>
-          In this AIML-500 activity, I explored key training methods such as supervised, unsupervised, and reinforcement learning.
-          I learned the differences in how models learn from data and apply feedback loops for performance improvement.
-        </p>
-        <img src="class_activity.png" alt="Training Methods Coach Activity" style="max-width:100%; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); margin-top:10px;">
-      </div>
-    </div>
+  <!-- ACTIVITY -->
+  <div class="container" id="activity">
+    <h2>Class Activity: Training Methods Coach</h2>
+    <p>
+      In this AIML-500 activity, I explored key training methods such as supervised, unsupervised, and reinforcement learning. I learned the differences in how models learn from data and apply feedback loops for performance improvement.
+    </p>
+    <img src="class_activity.png" alt="Training Methods Coach Activity" style="max-width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- REFLECTION -->
+  <div class="container" id="reflection">
+    <h2>Reflection</h2>
+    <p>
+      This artifact demonstrates my ability to apply unsupervised learning techniques and visualize meaningful insights from unlabeled data. 
+      I chose this project because clustering models are crucial for customer segmentation, and it complements my supervised learning knowledge. 
+      I incorporated peer feedback by adding detailed graphs (Elbow Method and Cluster Visualization) and documenting the process thoroughly.
+    </p>
+    <p>
+      The <strong>3.3 Training Methods Coach</strong> activity reinforced my understanding of algorithm selection and training workflows, which I applied while optimizing K-Means parameters. 
+      By integrating these lessons, I improved the clarity and accuracy of my results. This artifact not only highlights technical proficiency but also demonstrates the ability to tailor my work for professional and academic audiences.
+    </p>
   </div>
 
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
-</html>"""
-
-# Save the HTML again
-with open(os.path.join(complete_portfolio_path, "index.html"), "w") as f:
-    f.write(complete_html)
-
-# Re-add graphs (if available)
-for img in ["elbow-method.png", "clusters.png"]:
-    img_path = f"/mnt/data/Portfolio3_Graphs/{img}"
-    if os.path.exists(img_path):
-        shutil.copy(img_path, complete_portfolio_path)
-
-# Zip again
-complete_zip_path = "/mnt/data/Portfolio3_Complete.zip"
-with zipfile.ZipFile(complete_zip_path, 'w') as zipf:
-    for root, dirs, files in os.walk(complete_portfolio_path):
-        for file in files:
-            zipf.write(os.path.join(root, file),
-                       os.path.relpath(os.path.join(root, file), complete_portfolio_path))
-
-complete_zip_path
+</html>
