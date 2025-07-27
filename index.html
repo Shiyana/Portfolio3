@@ -1,9 +1,17 @@
-<!DOCTYPE html>
+import os
+import zipfile
+
+# Directory for final enhanced portfolio
+enhanced_portfolio_path = "/mnt/data/Portfolio3_Enhanced"
+os.makedirs(enhanced_portfolio_path, exist_ok=True)
+
+# Expanded Artifact 3 HTML content
+enhanced_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shiyana Jayanesan Shylaja | Portfolio 3</title>
+  <title>Shiyana Jayanesan Shylaja | Portfolio Artifact 1</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -62,26 +70,17 @@
       color: white;
       margin-top: 20px;
     }
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .links a {
-      color: #1e3799;
-      text-decoration: none;
+    .section-title {
       font-weight: bold;
-    }
-    .links a:hover {
-      text-decoration: underline;
+      color: #1e3799;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Shiyana Jayanesan Shylaja</h1>
-    <p>Professional Portfolio - AI/ML Projects</p>
+    <p>Portfolio Artifact 1 - AI/ML Projects</p>
   </header>
 
   <nav>
@@ -95,35 +94,64 @@
   <div class="container" id="home">
     <h2>Welcome to My Portfolio</h2>
     <p>
-      This portfolio highlights my key coursework and AI/ML projects completed in AIML-500, showcasing technical
-      expertise, data analysis, and visualization skills. Below are links to my previous artifacts:
+      This portfolio presents my AI/ML coursework artifacts, showcasing my technical capabilities, problem-solving approach,
+      and data visualization skills. Below you will find detailed explanations of each artifact, including my learnings
+      and key takeaways.
     </p>
-    <div class="links">
+    <p>
+      View my other works:
+      <br>
       <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1: Professional Portfolio</a>
+      <br>
       <a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2: Advanced AI/ML Skills</a>
-    </div>
+    </p>
   </div>
 
   <!-- ARTIFACT 3 -->
   <div class="container" id="artifact3">
     <h2>Artifact 3: Clustering Analysis with K-Means</h2>
-    <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
-    <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
-    <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
-    <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
-    <p><strong>Value Proposition:</strong> Demonstrates mastery of unsupervised learning and data visualization, enabling actionable insights from unlabeled data.</p>
-    <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72.</p>
+    <p><strong>Objective:</strong> To segment customer data using K-Means clustering and derive actionable insights for targeted marketing.</p>
+    <p><strong>Tools & Technologies:</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Jupyter Notebook.</p>
+
+    <div class="section-title">Process Overview:</div>
+    <ul>
+      <li><strong>Data Preprocessing:</strong> Cleaned and scaled the dataset to ensure optimal clustering performance.</li>
+      <li><strong>Determining Cluster Count:</strong> Applied the Elbow Method and Silhouette Score to identify 3 optimal clusters.</li>
+      <li><strong>K-Means Implementation:</strong> Ran the algorithm on processed data, assigned cluster labels, and calculated performance metrics.</li>
+      <li><strong>Visualization:</strong> Used 2D scatter plots and centroid visualization for easy interpretation.</li>
+    </ul>
+
     <div class="charts">
       <img src="elbow-method.png" alt="Elbow Method Graph">
       <img src="clusters.png" alt="Cluster Visualization">
     </div>
+
+    <div class="section-title">Challenges & Solutions:</div>
+    <p>
+      One challenge was selecting the right number of clusters, as initial guesses led to overfitting or poor separation.
+      By comparing the Elbow and Silhouette methods, I optimized the cluster count for better results.
+    </p>
+
+    <div class="section-title">Key Takeaways:</div>
+    <ul>
+      <li>Practical experience in unsupervised learning algorithms.</li>
+      <li>Enhanced understanding of data scaling and preprocessing importance.</li>
+      <li>Confidence in interpreting clustering results for business scenarios.</li>
+    </ul>
+
+    <div class="section-title">Results:</div>
+    <p>
+      Achieved clear segmentation of customers into 3 clusters with a silhouette score of 0.72, enabling better decision-making for targeted strategies.
+    </p>
   </div>
 
   <!-- ACTIVITY -->
   <div class="container" id="activity">
     <h2>Class Activity: Training Methods Coach</h2>
     <p>
-      In this AIML-500 activity, I explored key training methods such as supervised, unsupervised, and reinforcement learning. I learned the differences in how models learn from data and apply feedback loops for performance improvement.
+      As part of the AIML-500 course, I explored supervised, unsupervised, and reinforcement learning approaches through the
+      Training Methods Coach activity. This activity deepened my understanding of model behavior and how feedback loops
+      improve performance.
     </p>
     <img src="class_activity.png" alt="Training Methods Coach Activity" style="max-width:100%; border-radius:8px; margin-top:10px;">
   </div>
@@ -132,13 +160,13 @@
   <div class="container" id="reflection">
     <h2>Reflection</h2>
     <p>
-      This artifact demonstrates my ability to apply unsupervised learning techniques and visualize meaningful insights from unlabeled data. 
-      I chose this project because clustering models are crucial for customer segmentation, and it complements my supervised learning knowledge. 
-      I incorporated peer feedback by adding detailed graphs (Elbow Method and Cluster Visualization) and documenting the process thoroughly.
+      This artifact highlights my ability to apply unsupervised learning techniques to uncover hidden patterns in data.
+      I customized this artifact by adding visual evidence (Elbow and Cluster plots) and documenting the step-by-step process.
     </p>
     <p>
-      The <strong>3.3 Training Methods Coach</strong> activity reinforced my understanding of algorithm selection and training workflows, which I applied while optimizing K-Means parameters. 
-      By integrating these lessons, I improved the clarity and accuracy of my results. This artifact not only highlights technical proficiency but also demonstrates the ability to tailor my work for professional and academic audiences.
+      The <strong>Training Methods Coach</strong> activity helped me understand how algorithms learn differently under
+      various conditions, which guided my approach to optimizing clustering. The key takeaway is not just technical
+      accuracy, but also learning how to communicate insights clearly for stakeholders.
     </p>
   </div>
 
@@ -147,3 +175,24 @@
   </footer>
 </body>
 </html>
+"""
+
+# Save HTML
+with open(os.path.join(enhanced_portfolio_path, "index.html"), "w") as f:
+    f.write(enhanced_html)
+
+# Copy graphs if they exist
+for img in ["elbow-method.png", "clusters.png", "class_activity.png"]:
+    img_path = f"/mnt/data/Portfolio3_Graphs/{img}"
+    if os.path.exists(img_path):
+        os.system(f"cp '{img_path}' '{enhanced_portfolio_path}/'")
+
+# Create ZIP
+enhanced_zip_path = "/mnt/data/Portfolio3_Enhanced.zip"
+with zipfile.ZipFile(enhanced_zip_path, 'w') as zipf:
+    for root, dirs, files in os.walk(enhanced_portfolio_path):
+        for file in files:
+            zipf.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file), enhanced_portfolio_path))
+
+enhanced_zip_path
