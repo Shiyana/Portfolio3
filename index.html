@@ -1,12 +1,5 @@
-import os
-import zipfile
-
-# Directory for final exemplary portfolio
-exemplary_portfolio_path = "/mnt/data/Portfolio3_Exemplary"
-os.makedirs(exemplary_portfolio_path, exist_ok=True)
-
-# Updated HTML content with new color scheme and added details
-exemplary_html = """<!DOCTYPE html>
+# Redefine complete_html (since variable was lost after previous code cell)
+complete_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -50,6 +43,12 @@ exemplary_html = """<!DOCTYPE html>
       max-width: 1100px;
       margin: auto;
     }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
     .card {
       background: white;
       border-radius: 8px;
@@ -90,6 +89,13 @@ exemplary_html = """<!DOCTYPE html>
       }
     }
   </style>
+  <script>
+    function openTab(tabId) {
+      var contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -97,74 +103,91 @@ exemplary_html = """<!DOCTYPE html>
     <p>Professional Portfolio - Artifact 3</p>
   </header>
   <nav>
+    <a href="javascript:void(0)" onclick="openTab('home')">Home</a>
     <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a>
     <a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2</a>
-    <a href="#">Artifact 3</a>
+    <a href="javascript:void(0)" onclick="openTab('artifact3')">Artifact 3</a>
+    <a href="javascript:void(0)" onclick="openTab('activity')">Activity</a>
   </nav>
+
   <div class="container">
-    <div class="card">
-      <h2>Artifact 3: Clustering Analysis with K-Means</h2>
-      <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
-      <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
-      <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
-      <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
-      <p><strong>Value Proposition:</strong> Demonstrates mastery of unsupervised learning and data visualization, enabling actionable insights from unlabeled data.</p>
-      <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72.</p>
-      <div class="charts">
-        <div>
-          <img src="elbow-method.png" alt="Elbow Method Graph">
-          <p style="text-align:center;">Elbow Method Graph</p>
-        </div>
-        <div>
-          <img src="clusters.png" alt="Cluster Visualization">
-          <p style="text-align:center;">Cluster Visualization</p>
-        </div>
+    <!-- Home Tab -->
+    <div id="home" class="tab-content active">
+      <div class="card">
+        <h2>Welcome</h2>
+        <p>Explore my AI/ML professional portfolio featuring coursework projects, practical assignments, and key learning activities from AIML-500. Use the navigation tabs to view individual artifacts and class activities.</p>
       </div>
     </div>
-    <div class="card">
-      <h2>Activity Highlight: AIML-500 Training Methods Coach</h2>
-      <p>
-        As part of this course, I explored various machine learning training methods through interactive activities,
-        including supervised, unsupervised, and reinforcement learning. This activity improved my understanding of
-        algorithmic training approaches, and I applied these insights to refine my K-Means clustering model. It
-        complements this artifact by showcasing foundational skills that support advanced unsupervised learning tasks.
-      </p>
+
+    <!-- Artifact 3 Tab -->
+    <div id="artifact3" class="tab-content">
+      <div class="card">
+        <h2>Artifact 3: Clustering Analysis with K-Means</h2>
+        <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
+        <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
+        <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
+        <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
+        <p><strong>Value Proposition:</strong> Demonstrates mastery of unsupervised learning and data visualization, enabling actionable insights from unlabeled data.</p>
+        <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72.</p>
+        <div class="charts">
+          <div>
+            <img src="elbow-method.png" alt="Elbow Method Graph">
+            <p style="text-align:center;">Elbow Method Graph</p>
+          </div>
+          <div>
+            <img src="clusters.png" alt="Cluster Visualization">
+            <p style="text-align:center;">Cluster Visualization</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Reflection</h2>
+        <p>
+          I selected this artifact because it demonstrates a unique machine learning skill—unsupervised clustering—that
+          complements my earlier supervised learning activities. The 3.3 Training Methods Coach activity helped me
+          understand the theory behind model training, which I implemented in this clustering project.
+          Peer feedback suggested including visual evidence of model evaluation, so I added the Elbow Method and
+          cluster visualization graphs. This artifact now clearly shows the clustering process, evaluation metrics,
+          and actionable insights from raw data.
+        </p>
+      </div>
     </div>
-    <div class="card">
-      <h2>Reflection</h2>
-      <p>
-        I selected this artifact because it demonstrates a unique machine learning skill—unsupervised clustering—that
-        complements my earlier supervised learning activities. The 3.3 Training Methods Coach activity helped me
-        understand the theory behind model training, which I implemented in this clustering project.
-        Peer feedback suggested including visual evidence of model evaluation, so I added the Elbow Method and
-        cluster visualization graphs. This artifact now clearly shows the clustering process, the evaluation metrics,
-        and provides actionable insights from raw data. This experience enhanced my skills in data preparation,
-        algorithm selection, and presenting results professionally.
-      </p>
+
+    <!-- Activity Tab -->
+    <div id="activity" class="tab-content">
+      <div class="card">
+        <h2>Class Activity: Training Methods Coach</h2>
+        <p>
+          In this AIML-500 activity, I explored key training methods such as supervised, unsupervised, and reinforcement learning.
+          I learned the differences in how models learn from data and apply feedback loops for performance improvement.
+        </p>
+        <img src="class_activity.png" alt="Training Methods Coach Activity" style="max-width:100%; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); margin-top:10px;">
+      </div>
     </div>
   </div>
+
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
 </html>"""
 
-# Save HTML
-with open(os.path.join(exemplary_portfolio_path, "index.html"), "w") as f:
-    f.write(exemplary_html)
+# Save the HTML again
+with open(os.path.join(complete_portfolio_path, "index.html"), "w") as f:
+    f.write(complete_html)
 
-# Copy the real graphs
+# Re-add graphs (if available)
 for img in ["elbow-method.png", "clusters.png"]:
     img_path = f"/mnt/data/Portfolio3_Graphs/{img}"
     if os.path.exists(img_path):
-        os.system(f"cp '{img_path}' '{exemplary_portfolio_path}/'")
+        shutil.copy(img_path, complete_portfolio_path)
 
-# Create ZIP
-exemplary_zip_path = "/mnt/data/Portfolio3_Exemplary.zip"
-with zipfile.ZipFile(exemplary_zip_path, 'w') as zipf:
-    for root, dirs, files in os.walk(exemplary_portfolio_path):
+# Zip again
+complete_zip_path = "/mnt/data/Portfolio3_Complete.zip"
+with zipfile.ZipFile(complete_zip_path, 'w') as zipf:
+    for root, dirs, files in os.walk(complete_portfolio_path):
         for file in files:
             zipf.write(os.path.join(root, file),
-                       os.path.relpath(os.path.join(root, file), exemplary_portfolio_path))
+                       os.path.relpath(os.path.join(root, file), complete_portfolio_path))
 
-exemplary_zip_path
+complete_zip_path
