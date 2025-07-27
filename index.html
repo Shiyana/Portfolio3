@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+import zipfile
+import os
+
+# Directory for the improved Portfolio3
+improved_portfolio_path = "/mnt/data/Portfolio3_Improved"
+os.makedirs(improved_portfolio_path, exist_ok=True)
+
+# HTML content with modern styling (Portfolio2-like design)
+improved_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -123,4 +131,25 @@
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
-</html>
+</html>"""
+
+# Write the improved index.html
+with open(os.path.join(improved_portfolio_path, "index.html"), "w") as f:
+    f.write(improved_html)
+
+# Copy the placeholder images from the previous portfolio if they exist
+src_images = ["/mnt/data/Portfolio3_Artifact/images/elbow-method.png",
+              "/mnt/data/Portfolio3_Artifact/images/clusters.png"]
+for img_path in src_images:
+    if os.path.exists(img_path):
+        os.system(f"cp '{img_path}' '{improved_portfolio_path}/'")
+
+# Create ZIP file
+improved_zip_path = "/mnt/data/Portfolio3_Improved.zip"
+with zipfile.ZipFile(improved_zip_path, 'w') as zipf:
+    for root, dirs, files in os.walk(improved_portfolio_path):
+        for file in files:
+            zipf.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file), improved_portfolio_path))
+
+improved_zip_path
