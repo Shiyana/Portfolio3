@@ -1,52 +1,70 @@
-<!DOCTYPE html>
+import zipfile
+import os
+
+# Create a temporary folder for Portfolio3
+portfolio3_path = "/mnt/data/Portfolio3_Artifact"
+os.makedirs(portfolio3_path, exist_ok=True)
+
+# HTML content for index.html
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shiyana Jayanesan Shylaja - Artifact 3 Portfolio" />
-  <title>Shiyana Jayanesan Shylaja | Artifact 3 - Clustering Analysis</title>
+  <title>Shiyana Jayanesan Shylaja | Portfolio 3</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      background-color: #f9f9f9;
       color: #333;
     }
     header {
-      background: #2c3e50;
-      color: #fff;
+      background-color: #2c3e50;
+      color: white;
       padding: 20px;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
+    nav {
+      background-color: #34495e;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #1abc9c;
+      color: white;
     }
     .container {
       padding: 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
-    section {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .card {
+      background: white;
       margin-bottom: 20px;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    h2 {
-      margin-top: 0;
-    }
-    p {
-      line-height: 1.5;
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
     }
     footer {
       text-align: center;
-      padding: 15px;
-      background: #2c3e50;
-      color: #fff;
-      margin-top: 30px;
+      padding: 10px;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -55,28 +73,66 @@
     <h1>Shiyana Jayanesan Shylaja</h1>
     <p>Professional Portfolio - Artifact 3</p>
   </header>
-
+  <nav>
+    <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a>
+    <a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2</a>
+    <a href="#">Artifact 3</a>
+  </nav>
   <div class="container">
-    <section>
+    <div class="card">
       <h2>Artifact 3: Clustering Analysis with K-Means</h2>
       <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
-      <p><strong>Objective:</strong> To apply unsupervised learning techniques for data segmentation, discovering hidden patterns, and visualizing clusters.</p>
-      <p><strong>Process:</strong> Data preprocessing (cleaning, scaling), determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing results with 2D scatter plots.</p>
+      <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
+      <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
       <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
-      <p><strong>Value Proposition:</strong> This artifact demonstrates expertise in unsupervised machine learning and the ability to uncover actionable insights from unlabeled data.</p>
-      <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72, delivering clear, interpretable groupings.</p>
-    </section>
-
-    <section>
+      <p><strong>Key Results:</strong> 3 optimal clusters identified with a silhouette score of 0.72.</p>
+      <img src="images/elbow-method.png" alt="Elbow Method Graph">
+      <img src="images/clusters.png" alt="Cluster Visualization">
+    </div>
+    <div class="card">
       <h2>Reflection</h2>
       <p>
-        I selected this artifact because it showcases a unique machine learning skill—unsupervised clustering—that complements my earlier work on supervised models. This project helped me understand how to identify patterns without labeled data and reinforced my data visualization skills. I refined the artifact for a professional audience by including the Elbow Method and Silhouette visualizations, making the results more interpretable. Peer feedback prompted me to add detailed documentation of the process and practical insights, which I implemented. This artifact adds variety to my portfolio and demonstrates my ability to analyze data in a more exploratory and insightful way.
+        I selected this artifact because it highlights a unique machine learning skill—unsupervised clustering—that complements my previous supervised learning projects.
+        This project enhanced my ability to identify patterns in unlabeled data, refine visualizations, and incorporate feedback for professional presentation.
+        By including Elbow and Silhouette method charts, I was able to clearly show the cluster selection process. This artifact adds significant variety to my portfolio.
       </p>
-    </section>
+    </div>
   </div>
-
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
-</html>
+</html>"""
+
+# Create images directory
+images_dir = os.path.join(portfolio3_path, "images")
+os.makedirs(images_dir, exist_ok=True)
+
+# Save placeholder images
+from PIL import Image, ImageDraw
+
+# Create placeholder Elbow Method chart
+elbow_img = Image.new('RGB', (600, 300), color=(240, 240, 240))
+draw = ImageDraw.Draw(elbow_img)
+draw.text((50, 130), "Elbow Method Graph Placeholder", fill=(0, 0, 0))
+elbow_img.save(os.path.join(images_dir, "elbow-method.png"))
+
+# Create placeholder Cluster chart
+cluster_img = Image.new('RGB', (600, 300), color=(240, 240, 240))
+draw = ImageDraw.Draw(cluster_img)
+draw.text((50, 130), "Cluster Visualization Placeholder", fill=(0, 0, 0))
+cluster_img.save(os.path.join(images_dir, "clusters.png"))
+
+# Write HTML file
+with open(os.path.join(portfolio3_path, "index.html"), "w") as f:
+    f.write(html_content)
+
+# Create ZIP file
+zip_path = "/mnt/data/Portfolio3_Artifact.zip"
+with zipfile.ZipFile(zip_path, 'w') as zipf:
+    for root, dirs, files in os.walk(portfolio3_path):
+        for file in files:
+            zipf.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file), portfolio3_path))
+
+zip_path
