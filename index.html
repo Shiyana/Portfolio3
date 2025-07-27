@@ -3,96 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shiyana Jayanesan Shylaja | Portfolio</title>
+  <title>Class Activity: Training Methods Coach</title>
   <style>
-    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333;}
-    header {background: linear-gradient(90deg, #4a69bd, #1e3799); color: white; text-align: center; padding: 25px 15px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);} 
-    nav {background: #1e3799; text-align: center; padding: 12px 0;} 
-    nav a {color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; transition: background 0.3s;} 
-    nav a:hover {background: #60a3bc; border-radius: 5px;} 
-    .container {max-width: 1100px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);} 
-    h2, h3 {color: #1e3799;} 
-    .links a {display: block; color: #1e3799; font-weight: bold; text-decoration: none; margin: 5px 0;} 
-    .links a:hover {text-decoration: underline;} 
-    .tabs button {background: #1e3799; color: white; border: none; padding: 10px 15px; margin: 5px; cursor: pointer; border-radius: 5px;} 
-    .tabs button:hover {background: #60a3bc;} 
-    .tab-section {display: none; margin-top: 15px;} 
-    .tab-section.active {display: block;} 
-    .charts img {max-width: 48%; margin: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);} 
-    .charts {display: flex; flex-wrap: wrap; justify-content: space-around;} 
-    footer {text-align: center; padding: 15px; background: linear-gradient(90deg, #1e3799, #4a69bd); color: white; font-size: 14px; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);} 
+    body {font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; color: #333;}
+    header {background: linear-gradient(90deg, #4a69bd, #1e3799); color: white; padding: 20px; text-align: center;}
+    .container {max-width: 1000px; margin: 30px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+    h2, h3 {color: #1e3799;}
+    nav {text-align: center; padding: 15px; background-color: #1e3799;}
+    nav a {color: white; text-decoration: none; margin: 0 10px; font-weight: bold;}
+    nav a:hover {text-decoration: underline;}
+    footer {text-align: center; padding: 10px; background: #1e3799; color: white; font-size: 14px;}
+    img {max-width: 100%; border-radius: 8px; margin-top: 10px;}
   </style>
-  <script>
-    function showTab(tabId) {
-      const sections = document.querySelectorAll('.tab-section');
-      sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
 </head>
 <body>
   <header>
-    <h1>Shiyana Jayanesan Shylaja</h1>
-    <p>AI/ML Portfolio</p>
+    <h1>Class Activity: Training Methods Coach</h1>
   </header>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#artifact3">Artifact 3</a>
-    <a href="activity.html">Activity</a>
-    <a href="#reflection">Reflection</a>
+    <a href="index.html">Back to Portfolio</a>
   </nav>
-  <div class="container" id="home">
-    <h2>Welcome to My Portfolio</h2>
-    <p>This portfolio showcases my AI/ML coursework artifacts and assignments, highlighting my expertise in unsupervised learning, data visualization, and problem-solving.</p>
-    <div class="links">
-      <p><a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1: Professional Portfolio</a></p>
-      <p><a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2: Advanced AI/ML Skills</a></p>
-    </div>
-  </div>
-  <div class="container" id="artifact3">
-    <h2>Portfolio Artifact 3: Clustering Analysis with K-Means</h2>
-    <div class="tabs">
-      <button onclick="showTab('overview')">Overview</button>
-      <button onclick="showTab('process')">Process</button>
-      <button onclick="showTab('challenges')">Challenges & Solutions</button>
-      <button onclick="showTab('takeaways')">Key Takeaways</button>
-      <button onclick="showTab('conclusion')">Conclusion & Future Improvements</button>
-    </div>
-    <div class="tab-section active" id="overview">
-      <h3>Overview</h3>
-      <p>This artifact demonstrates the use of K-Means clustering to segment customer data and reveal hidden patterns. It outlines the motivation behind the choice of K-Means, its applications in business analytics, and its role in customer segmentation.</p>
-    </div>
-    <div class="tab-section" id="process">
-      <h3>Process</h3>
-      <p><strong>Step 1:</strong> Data Cleaning and Preprocessing – removed missing values, normalized features.<br><strong>Step 2:</strong> Applied Elbow Method and Silhouette Score to determine the optimal number of clusters (3).<br><strong>Step 3:</strong> Implemented K-Means algorithm, assigned cluster labels, and visualized results.<br><strong>Step 4:</strong> Evaluated cluster quality through silhouette analysis and plotted clusters for interpretation.</p>
-      <div class="charts">
-        <img src="elbow-method.png" alt="Elbow Method Graph">
-        <img src="clusters.png" alt="Cluster Visualization">
-      </div>
-    </div>
-    <div class="tab-section" id="challenges">
-      <h3>Challenges & Solutions</h3>
-      <ul>
-        <li><strong>Challenge:</strong> Ambiguity in selecting the correct number of clusters.<br><strong>Solution:</strong> Utilized both the Elbow and Silhouette methods for reliable decision-making.</li>
-        <li><strong>Challenge:</strong> Outliers affecting cluster centroids.<br><strong>Solution:</strong> Implemented outlier detection and removed anomalies prior to clustering.</li>
-      </ul>
-    </div>
-    <div class="tab-section" id="takeaways">
-      <h3>Key Takeaways</h3>
-      <ul>
-        <li>Improved understanding of unsupervised learning principles and cluster evaluation techniques.</li>
-        <li>Enhanced data visualization skills with Matplotlib and Seaborn.</li>
-        <li>Learned to apply K-Means for actionable business insights and customer segmentation.</li>
-      </ul>
-    </div>
-    <div class="tab-section" id="conclusion">
-      <h3>Conclusion & Future Improvements</h3>
-      <p>This project provided valuable insights into unsupervised learning techniques and their applications. Future improvements include automating the feature selection process, experimenting with hierarchical clustering, and integrating the results into a business dashboard for real-time analysis.</p>
-    </div>
-  </div>
-  <div class="container" id="reflection">
-    <h2>Reflection</h2>
-    <p>This artifact demonstrates my ability to apply clustering to real-world datasets, evaluate model quality, and present results effectively. I tailored the project for a professional audience by focusing on clarity, actionable insights, and strong visualization techniques. Lessons learned include the importance of iterative testing, careful feature engineering, and validation techniques. Peer feedback on visual presentation helped refine the charts and cluster analysis.</p>
+  <div class="container">
+    <h2>Overview of Activity</h2>
+    <p>This class activity was designed to help us explore various machine learning training methods such as supervised, unsupervised, and reinforcement learning. It was interactive, requiring us to engage with an AI-powered chatbot to deepen our understanding of these methods and their practical applications.</p>
+
+    <h3>Chatbot Experience</h3>
+    <p>Working with the chatbot provided real-time responses to questions about machine learning models, their training data, and their applications. The conversational AI acted as a tutor, breaking down complex concepts like the Elbow Method, clustering, and reinforcement feedback loops into easy-to-understand explanations. This enhanced the learning experience by creating a dynamic, collaborative environment.</p>
+
+    <h3>Key Insights from the Activity</h3>
+    <ul>
+      <li>Improved understanding of supervised vs. unsupervised training.</li>
+      <li>Hands-on exploration of algorithms like K-Means and decision trees.</li>
+      <li>Recognized how repetition and iteration improve model performance.</li>
+      <li>Experienced the benefits of AI-driven educational tools.</li>
+    </ul>
+
+    <h3>Screenshot</h3>
+    <img src="class_activity.png" alt="Training Methods Coach Activity Screenshot">
   </div>
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
