@@ -6,21 +6,34 @@
   <title>Shiyana Jayanesan Shylaja | Portfolio</title>
   <style>
     body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333;}
-    header {background: linear-gradient(90deg, #4a69bd, #1e3799); color: white; text-align: center; padding: 25px 15px;}
+    header {background: linear-gradient(90deg, #4a69bd, #1e3799); color: white; text-align: center; padding: 25px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);}
     nav {background: #1e3799; text-align: center; padding: 12px 0;}
     nav a {color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; transition: background 0.3s;}
     nav a:hover {background: #60a3bc; border-radius: 5px;}
-    .container {max-width: 1100px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
+    .container {max-width: 1100px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
     h2, h3 {color: #1e3799;}
     .links a {display: block; color: #1e3799; font-weight: bold; text-decoration: none; margin: 5px 0;}
     .links a:hover {text-decoration: underline;}
-    footer {text-align: center; padding: 15px; background: linear-gradient(90deg, #1e3799, #4a69bd); color: white; font-size: 14px;}
+    .tabs button {background: #1e3799; color: white; border: none; padding: 10px 15px; margin: 5px; cursor: pointer; border-radius: 5px;}
+    .tabs button:hover {background: #60a3bc;}
+    .tab-section {display: none; margin-top: 15px;}
+    .tab-section.active {display: block;}
+    .charts img {max-width: 48%; margin: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);}
+    .charts {display: flex; flex-wrap: wrap; justify-content: space-around;}
+    footer {text-align: center; padding: 15px; background: linear-gradient(90deg, #1e3799, #4a69bd); color: white; font-size: 14px; box-shadow: 0 -2px 4px rgba(0,0,0,0.1);}
   </style>
+  <script>
+    function showTab(tabId) {
+      const sections = document.querySelectorAll('.tab-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Shiyana Jayanesan Shylaja</h1>
-    <p>AI/ML Portfolio</p>
+    <p>Portfolio Artifact 3 - AI/ML Projects</p>
   </header>
   <nav>
     <a href="#home">Home</a>
@@ -38,14 +51,52 @@
   </div>
   <div class="container" id="artifact3">
     <h2>Artifact 3: Clustering Analysis with K-Means</h2>
-    <p>Details about the clustering project and interactive sections (Overview, Process, Challenges, and Takeaways) are included here.</p>
+    <div class="tabs">
+      <button onclick="showTab('overview')">Overview</button>
+      <button onclick="showTab('process')">Process</button>
+      <button onclick="showTab('challenges')">Challenges & Solutions</button>
+      <button onclick="showTab('takeaways')">Key Takeaways</button>
+      <button onclick="showTab('conclusion')">Conclusion & Future Improvements</button>
+    </div>
+    <div class="tab-section active" id="overview">
+      <h3>Overview</h3>
+      <p>This artifact demonstrates the use of K-Means clustering to segment customer data and reveal hidden patterns. It outlines the motivation behind the choice of K-Means, its applications in business analytics, and its role in customer segmentation.</p>
+    </div>
+    <div class="tab-section" id="process">
+      <h3>Process</h3>
+      <p><strong>Step 1:</strong> Data Cleaning and Preprocessing – removed missing values, normalized features.<br><strong>Step 2:</strong> Applied Elbow Method and Silhouette Score to determine the optimal number of clusters (3).<br><strong>Step 3:</strong> Implemented K-Means algorithm, assigned cluster labels, and visualized results.<br><strong>Step 4:</strong> Evaluated cluster quality through silhouette analysis and plotted clusters for interpretation.</p>
+      <div class="charts">
+        <img src="elbow-method.png" alt="Elbow Method Graph">
+        <img src="clusters.png" alt="Cluster Visualization">
+      </div>
+    </div>
+    <div class="tab-section" id="challenges">
+      <h3>Challenges & Solutions</h3>
+      <ul>
+        <li><strong>Challenge:</strong> Ambiguity in selecting the correct number of clusters.<br><strong>Solution:</strong> Utilized both the Elbow and Silhouette methods for reliable decision-making.</li>
+        <li><strong>Challenge:</strong> Outliers affecting cluster centroids.<br><strong>Solution:</strong> Implemented outlier detection and removed anomalies prior to clustering.</li>
+      </ul>
+    </div>
+    <div class="tab-section" id="takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Improved understanding of unsupervised learning principles and cluster evaluation techniques.</li>
+        <li>Enhanced data visualization skills with Matplotlib and Seaborn.</li>
+        <li>Learned to apply K-Means for actionable business insights and customer segmentation.</li>
+      </ul>
+    </div>
+    <div class="tab-section" id="conclusion">
+      <h3>Conclusion & Future Improvements</h3>
+      <p>This project provided valuable insights into unsupervised learning techniques and their applications. Future improvements include automating the feature selection process, experimenting with hierarchical clustering, and integrating the results into a business dashboard for real-time analysis.</p>
+    </div>
   </div>
   <div class="container" id="reflection">
     <h2>Reflection</h2>
-    <p>This artifact demonstrates my ability to apply clustering to real-world datasets, evaluate model quality, and present results effectively. Lessons learned include the importance of iterative testing, careful feature engineering, and validation techniques.</p>
+    <p>This artifact demonstrates my ability to apply clustering to real-world datasets, evaluate model quality, and present results effectively. I tailored the project for a professional audience by focusing on clarity, actionable insights, and strong visualization techniques. Lessons learned include the importance of iterative testing, careful feature engineering, and validation techniques. Peer feedback on visual presentation helped refine the charts and cluster analysis.</p>
   </div>
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
 </html>
+
