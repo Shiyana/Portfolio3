@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+import os
+import zipfile
+
+# Directory for final exemplary portfolio
+exemplary_portfolio_path = "/mnt/data/Portfolio3_Exemplary"
+os.makedirs(exemplary_portfolio_path, exist_ok=True)
+
+# Updated HTML content with new color scheme and added details
+exemplary_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,11 +17,11 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
+      background-color: #eef2f3;
       color: #333;
     }
     header {
-      background: #2c3e50;
+      background: #4a69bd;
       color: white;
       padding: 20px;
       text-align: center;
@@ -23,7 +31,7 @@
       font-size: 2.5em;
     }
     nav {
-      background: #34495e;
+      background: #1e3799;
       display: flex;
       justify-content: center;
     }
@@ -35,7 +43,7 @@
       transition: background 0.3s;
     }
     nav a:hover {
-      background: #1abc9c;
+      background: #60a3bc;
     }
     .container {
       padding: 20px;
@@ -51,6 +59,7 @@
     }
     .card h2 {
       margin-top: 0;
+      color: #1e3799;
     }
     .charts {
       display: flex;
@@ -68,7 +77,7 @@
     footer {
       text-align: center;
       padding: 15px;
-      background-color: #2c3e50;
+      background-color: #4a69bd;
       color: white;
       margin-top: 20px;
     }
@@ -99,7 +108,8 @@
       <p><strong>Objective:</strong> Apply unsupervised learning techniques to segment data, identify hidden patterns, and visualize clusters.</p>
       <p><strong>Process:</strong> Data preprocessing, determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing clusters.</p>
       <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
-      <p><strong>Key Results:</strong> 3 optimal clusters identified with a silhouette score of 0.72.</p>
+      <p><strong>Value Proposition:</strong> Demonstrates mastery of unsupervised learning and data visualization, enabling actionable insights from unlabeled data.</p>
+      <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72.</p>
       <div class="charts">
         <div>
           <img src="elbow-method.png" alt="Elbow Method Graph">
@@ -112,11 +122,24 @@
       </div>
     </div>
     <div class="card">
+      <h2>Activity Highlight: AIML-500 Training Methods Coach</h2>
+      <p>
+        As part of this course, I explored various machine learning training methods through interactive activities,
+        including supervised, unsupervised, and reinforcement learning. This activity improved my understanding of
+        algorithmic training approaches, and I applied these insights to refine my K-Means clustering model. It
+        complements this artifact by showcasing foundational skills that support advanced unsupervised learning tasks.
+      </p>
+    </div>
+    <div class="card">
       <h2>Reflection</h2>
       <p>
-        I selected this artifact because it highlights a unique machine learning skill—unsupervised clustering—that complements my previous supervised learning projects.
-        This project enhanced my ability to identify patterns in unlabeled data, refine visualizations, and incorporate feedback for professional presentation.
-        By including Elbow and Silhouette method charts, I was able to clearly show the cluster selection process. This artifact adds significant variety to my portfolio.
+        I selected this artifact because it demonstrates a unique machine learning skill—unsupervised clustering—that
+        complements my earlier supervised learning activities. The 3.3 Training Methods Coach activity helped me
+        understand the theory behind model training, which I implemented in this clustering project.
+        Peer feedback suggested including visual evidence of model evaluation, so I added the Elbow Method and
+        cluster visualization graphs. This artifact now clearly shows the clustering process, the evaluation metrics,
+        and provides actionable insights from raw data. This experience enhanced my skills in data preparation,
+        algorithm selection, and presenting results professionally.
       </p>
     </div>
   </div>
@@ -124,4 +147,24 @@
     <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
-</html>
+</html>"""
+
+# Save HTML
+with open(os.path.join(exemplary_portfolio_path, "index.html"), "w") as f:
+    f.write(exemplary_html)
+
+# Copy the real graphs
+for img in ["elbow-method.png", "clusters.png"]:
+    img_path = f"/mnt/data/Portfolio3_Graphs/{img}"
+    if os.path.exists(img_path):
+        os.system(f"cp '{img_path}' '{exemplary_portfolio_path}/'")
+
+# Create ZIP
+exemplary_zip_path = "/mnt/data/Portfolio3_Exemplary.zip"
+with zipfile.ZipFile(exemplary_zip_path, 'w') as zipf:
+    for root, dirs, files in os.walk(exemplary_portfolio_path):
+        for file in files:
+            zipf.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file), exemplary_portfolio_path))
+
+exemplary_zip_path
