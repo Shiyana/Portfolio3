@@ -13,21 +13,23 @@
       color: #333;
     }
     header {
-      background: #4a69bd;
+      background: linear-gradient(90deg, #4a69bd, #1e3799);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     nav {
       background: #1e3799;
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
     }
     nav a {
       color: white;
       text-decoration: none;
       padding: 10px 15px;
       font-weight: bold;
+      transition: background 0.3s;
     }
     nav a:hover {
       background: #60a3bc;
@@ -57,10 +59,11 @@
     }
     footer {
       text-align: center;
-      padding: 10px;
-      background: #4a69bd;
+      padding: 15px;
+      background: linear-gradient(90deg, #1e3799, #4a69bd);
       color: white;
-      margin-top: 20px;
+      font-size: 14px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -88,7 +91,7 @@
   <div class="container" id="artifact3">
     <h2>Artifact 3: Clustering Analysis with K-Means</h2>
     <p><strong>Objective:</strong> Segment customer data using K-Means clustering and uncover actionable patterns for business strategies.</p>
-    <p><strong>Detailed Explanation:</strong> The project involves data preprocessing, feature scaling, and determining the number of clusters using methods like Elbow and Silhouette analysis. The final model groups customers into three distinct clusters, providing insights into customer behavior.</p>
+    <p><strong>Detailed Explanation:</strong> This project involves data preprocessing, feature scaling, and determining the number of clusters using methods like Elbow and Silhouette analysis. The final model groups customers into three distinct clusters, providing insights into customer behavior.</p>
     <div class="charts">
       <img src="elbow-method.png" alt="Elbow Method Graph">
       <img src="clusters.png" alt="Cluster Visualization">
@@ -96,7 +99,7 @@
     <h3>Key Takeaways</h3>
     <ul>
       <li>Learned the importance of data normalization for effective clustering.</li>
-      <li>Developed strong understanding of evaluating cluster quality.</li>
+      <li>Developed a strong understanding of evaluating cluster quality.</li>
       <li>Gained hands-on experience with Python libraries for data visualization.</li>
     </ul>
   </div>
