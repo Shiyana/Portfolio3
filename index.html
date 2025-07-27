@@ -1,12 +1,4 @@
-import os
-import zipfile
-
-# Directory for final expanded portfolio
-expanded_portfolio_path = "/mnt/data/Portfolio3_Expanded"
-os.makedirs(expanded_portfolio_path, exist_ok=True)
-
-# Expanded Artifact 3 HTML with dedicated tab and more content
-expanded_html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -63,28 +55,6 @@ expanded_html = """<!DOCTYPE html>
       flex-wrap: wrap;
       justify-content: space-around;
     }
-    .sub-tabs {
-      margin-top: 15px;
-    }
-    .sub-tabs button {
-      background: #1e3799;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .sub-tabs button:hover {
-      background: #60a3bc;
-    }
-    .sub-section {
-      display: none;
-      margin-top: 20px;
-    }
-    .sub-section.active {
-      display: block;
-    }
     footer {
       text-align: center;
       padding: 10px;
@@ -93,13 +63,6 @@ expanded_html = """<!DOCTYPE html>
       margin-top: 20px;
     }
   </style>
-  <script>
-    function openSubTab(tabId) {
-      var sections = document.querySelectorAll('.sub-section');
-      sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -114,114 +77,42 @@ expanded_html = """<!DOCTYPE html>
     <a href="#reflection">Reflection</a>
   </nav>
 
-  <!-- HOME -->
   <div class="container" id="home">
     <h2>Welcome to My Portfolio</h2>
     <p>
-      This portfolio showcases my AI/ML coursework artifacts and assignments, highlighting skills in unsupervised learning, 
-      data visualization, and real-world problem solving. You can explore detailed case studies, class activities, and my 
-      reflections on the learning process.
-    </p>
-    <p>
-      Other projects:
-      <br>
-      <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1: Professional Portfolio</a>
-      <br>
-      <a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2: Advanced AI/ML Skills</a>
+      This portfolio showcases my AI/ML coursework artifacts and assignments, highlighting my expertise in unsupervised learning, 
+      data visualization, and problem-solving.
     </p>
   </div>
 
-  <!-- ARTIFACT 3 -->
   <div class="container" id="artifact3">
     <h2>Artifact 3: Clustering Analysis with K-Means</h2>
-    <div class="sub-tabs">
-      <button onclick="openSubTab('overview')">Overview</button>
-      <button onclick="openSubTab('process')">Process</button>
-      <button onclick="openSubTab('challenges')">Challenges</button>
-      <button onclick="openSubTab('results')">Results & Key Takeaways</button>
+    <p><strong>Objective:</strong> Segment customer data using K-Means clustering and uncover actionable patterns for business strategies.</p>
+    <p><strong>Detailed Explanation:</strong> The project involves data preprocessing, feature scaling, and determining the number of clusters using methods like Elbow and Silhouette analysis. The final model groups customers into three distinct clusters, providing insights into customer behavior.</p>
+    <div class="charts">
+      <img src="elbow-method.png" alt="Elbow Method Graph">
+      <img src="clusters.png" alt="Cluster Visualization">
     </div>
-
-    <div class="sub-section active" id="overview">
-      <h3>Overview</h3>
-      <p>
-        This artifact demonstrates the use of K-Means clustering to segment customer data into meaningful groups. 
-        The purpose of this project is to identify hidden patterns within datasets for better decision-making.
-      </p>
-      <p>
-        <strong>Objective:</strong> Use unsupervised learning to cluster data, identify trends, and visualize clusters 
-        effectively for business insights.
-      </p>
-      <p>
-        <strong>Tools & Technologies:</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Jupyter Notebook.
-      </p>
-    </div>
-
-    <div class="sub-section" id="process">
-      <h3>Process</h3>
-      <p><strong>Step 1: Data Preprocessing</strong><br>
-        Cleaned and normalized the dataset to ensure uniform scaling, handled missing values, and prepared features for clustering.
-      </p>
-      <p><strong>Step 2: Optimal Cluster Identification</strong><br>
-        Applied the Elbow Method and Silhouette Score to identify the optimal number of clusters (3 in this case).
-      </p>
-      <p><strong>Step 3: K-Means Algorithm</strong><br>
-        Implemented K-Means clustering, assigned labels, and computed metrics to evaluate cluster quality.
-      </p>
-      <p><strong>Step 4: Visualization</strong><br>
-        Generated scatter plots to visualize clusters and centroids, ensuring interpretability.
-      </p>
-      <div class="charts">
-        <img src="elbow-method.png" alt="Elbow Method Graph">
-        <img src="clusters.png" alt="Cluster Visualization">
-      </div>
-    </div>
-
-    <div class="sub-section" id="challenges">
-      <h3>Challenges & Solutions</h3>
-      <ul>
-        <li><strong>Challenge:</strong> Determining the correct number of clusters was initially ambiguous.<br>
-            <strong>Solution:</strong> Used a combination of Elbow Method and Silhouette Score for accurate selection.</li>
-        <li><strong>Challenge:</strong> Handling unscaled features distorted clustering results.<br>
-            <strong>Solution:</strong> Applied feature scaling (StandardScaler) to standardize the dataset.</li>
-      </ul>
-    </div>
-
-    <div class="sub-section" id="results">
-      <h3>Results & Key Takeaways</h3>
-      <p>
-        The model successfully identified 3 clusters with a silhouette score of 0.72, 
-        indicating good separation between the clusters. The visualizations provided actionable insights into customer behavior.
-      </p>
-      <h4>Key Takeaways:</h4>
-      <ul>
-        <li>Mastered unsupervised learning concepts and the practical implementation of K-Means.</li>
-        <li>Improved understanding of data preprocessing and the impact of feature scaling.</li>
-        <li>Learned to use metrics and visualization tools to evaluate clustering quality.</li>
-      </ul>
-    </div>
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Learned the importance of data normalization for effective clustering.</li>
+      <li>Developed strong understanding of evaluating cluster quality.</li>
+      <li>Gained hands-on experience with Python libraries for data visualization.</li>
+    </ul>
   </div>
 
-  <!-- ACTIVITY -->
   <div class="container" id="activity">
     <h2>Class Activity: Training Methods Coach</h2>
     <p>
-      This AIML-500 class activity covered supervised, unsupervised, and reinforcement learning. It enhanced my ability to 
-      compare algorithm behaviors, understand feedback loops, and apply these concepts in real-world ML tasks.
+      In this activity, I explored supervised, unsupervised, and reinforcement learning, improving my understanding of algorithmic approaches and training methods.
     </p>
     <img src="class_activity.png" alt="Training Methods Coach Activity" style="max-width:100%; border-radius:8px; margin-top:10px;">
   </div>
 
-  <!-- REFLECTION -->
   <div class="container" id="reflection">
     <h2>Reflection</h2>
     <p>
-      Artifact 3 showcases my ability to handle unlabeled data, preprocess it, and apply clustering algorithms 
-      effectively. The inclusion of the Elbow and Silhouette methods demonstrates my critical thinking in model selection.
-    </p>
-    <p>
-      The <strong>Training Methods Coach</strong> activity provided theoretical grounding that I applied while selecting 
-      hyperparameters for K-Means. My key learning from this project is the importance of iterative testing and validation 
-      in unsupervised machine learning.
+      This artifact demonstrates my ability to transform raw data into meaningful clusters that provide actionable business insights. By applying K-Means and visualizing the results, I honed my skills in unsupervised learning.
     </p>
   </div>
 
@@ -230,24 +121,3 @@ expanded_html = """<!DOCTYPE html>
   </footer>
 </body>
 </html>
-"""
-
-# Save the HTML file
-with open(os.path.join(expanded_portfolio_path, "index.html"), "w") as f:
-    f.write(expanded_html)
-
-# Copy graphs if available
-for img in ["elbow-method.png", "clusters.png", "class_activity.png"]:
-    img_path = f"/mnt/data/Portfolio3_Graphs/{img}"
-    if os.path.exists(img_path):
-        os.system(f"cp '{img_path}' '{expanded_portfolio_path}/'")
-
-# Create ZIP
-expanded_zip_path = "/mnt/data/Portfolio3_Expanded.zip"
-with zipfile.ZipFile(expanded_zip_path, 'w') as zipf:
-    for root, dirs, files in os.walk(expanded_portfolio_path):
-        for file in files:
-            zipf.write(os.path.join(root, file),
-                       os.path.relpath(os.path.join(root, file), expanded_portfolio_path))
-
-expanded_zip_path
