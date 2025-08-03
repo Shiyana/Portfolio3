@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artifact 4: Clustering Analysis with K-Means</title>
+  <title>Artifact 4: Machine Learning Scenarios and Ethical Reflection</title>
   <style>
     body { font-family: Arial, sans-serif; background-color: #f4f8fb; color: #333; margin: 0; padding: 0; }
     header, footer { background-color: #1e3799; color: white; text-align: center; padding: 20px; }
@@ -29,7 +29,7 @@
 </head>
 <body>
   <header>
-    <h1>Artifact 4: Clustering Analysis with K-Means</h1>
+    <h1>Artifact 4: Machine Learning Scenarios and Ethical Reflection</h1>
     <p>Shiyana Jayanesan Shylaja | Machine Learning Portfolio</p>
   </header>
 
@@ -37,7 +37,7 @@
     <div class="tabs">
       <button onclick="showTab('overview')">Overview</button>
       <button onclick="showTab('process')">Process</button>
-      <button onclick="showTab('challenges')">Challenges</button>
+      <button onclick="showTab('scenarios')">Scenarios</button>
       <button onclick="showTab('takeaways')">Key Takeaways</button>
       <button onclick="showTab('reflection')">Reflection</button>
       <button onclick="showTab('conclusion')">Conclusion</button>
@@ -45,67 +45,52 @@
 
     <div class="tab-content" id="overview">
       <h2>Overview</h2>
-      <p>This artifact demonstrates my application of K-Means clustering combined with experiential learning through chatbot-led AI/ML scenarios and ethical leadership reflection activities. I practiced resolving real-world data issues through guided case studies covering missing data, noisy signals, and class imbalance. Each scenario pushed me to design practical, evidence-based preprocessing pipelines and validated my decision-making process.</p>
-      <p>Additionally, I developed a leadership framework rooted in integrity and inclusion. In my reflection "Navigating Human Bias as a Leader in AI and Education," I explored how ethical considerations in model design can be systematically integrated through data audits, inclusive design, and stakeholder feedback loops. These ideas now influence how I structure my AI problem-solving from both technical and ethical standpoints.</p>
-      <p>This comprehensive experience helped align my technical skill development with reflective thinking—establishing the foundations of my identity as an AI practitioner committed to both innovation and fairness.</p>
+      <p>This artifact captures my engagement with three real-world machine learning problem scenarios guided by a chatbot, complemented by a leadership reflection on human bias in AI and education. Through structured exercises, I tackled missing data, noisy sensor readings, and class imbalance. Each scenario included decision-making processes, strategies, and coding examples.</p>
+      <p>These were paired with ethical reflections on leadership in the AI space, where I explored inclusive design, data audits, and stakeholder involvement. The integration of technical analysis and reflective writing provided a holistic foundation in practical and principled machine learning practices.</p>
     </div>
 
     <div class="tab-content" id="process">
       <h2>Process</h2>
       <p>
-        <strong>Step 1:</strong> Loaded dataset and handled missing values using median imputation.<br>
-        <strong>Step 2:</strong> Detected noisy sensor readings and smoothed them using rolling average.<br>
-        <strong>Step 3:</strong> Used Elbow and Silhouette methods to determine optimal k for K-Means.<br>
-        <strong>Step 4:</strong> Applied SMOTE for class imbalance in separate classification practice.<br>
-        <strong>Step 5:</strong> Applied K-Means clustering and visualized segments for business insight.
+        <strong>Step 1:</strong> Analyzed missing data patterns and applied imputation techniques using Pandas and SimpleImputer.<br>
+        <strong>Step 2:</strong> Cleaned noisy sensor signals using moving average and statistical outlier removal.<br>
+        <strong>Step 3:</strong> Used SMOTE and class weighting to manage class imbalance in rare disease prediction.<br>
+        <strong>Step 4:</strong> Documented reflections and applied learnings on ethical leadership.
       </p>
-      <div class="charts">
-        <h3>Elbow Method</h3>
-        <img src="elbow-method.png" alt="Elbow Method Chart">
-
-        <h3>Silhouette Scores</h3>
-        <img src="silhouette.png" alt="Silhouette Score Chart">
-
-        <h3>Cluster Visualization</h3>
-        <img src="clusters.png" alt="Cluster Visualization">
-      </div>
     </div>
 
-    <div class="tab-content" id="challenges">
-      <h2>Challenges & Solutions</h2>
-      <ul>
-        <li><strong>Imbalanced data:</strong> Solved with SMOTE and model-specific class weights.</li>
-        <li><strong>Noisy readings:</strong> Used moving averages and statistical methods to clean signal data.</li>
-        <li><strong>Choosing optimal clusters:</strong> Addressed using Elbow and Silhouette plots for evaluation.</li>
-      </ul>
+    <div class="tab-content" id="scenarios">
+      <h2>Chatbot-Guided ML Scenarios</h2>
+      <p><strong>Scenario 1 – Missing Data:</strong> Explored strategies such as median imputation, predictive modeling, and missingness flags using Python.</p>
+      <p><strong>Scenario 2 – Noisy Data:</strong> Applied visualization, smoothing techniques, and rolling averages to clean data and improve signal clarity.</p>
+      <p><strong>Scenario 3 – Imbalanced Data:</strong> Utilized SMOTE and model evaluation metrics (F1-score, ROC-AUC) to counter bias in rare event classification.</p>
     </div>
 
     <div class="tab-content" id="takeaways">
       <h2>Key Takeaways</h2>
       <ul>
-        <li>Chatbot activities helped simulate real decision-making in ML workflows.</li>
-        <li>Data cleaning is foundational to ML—handling missing, noisy, and skewed datasets boosts accuracy.</li>
-        <li>Elbow and Silhouette methods provide strong justifications for clustering parameter choices.</li>
-        <li>AI ethics and bias mitigation are continuous processes requiring leadership and accountability.</li>
-        <li>Communication of results through visualization improves stakeholder trust and understanding.</li>
+        <li>Handled real-world data challenges in a structured and repeatable way.</li>
+        <li>Learned to select the right preprocessing techniques based on data quality issues.</li>
+        <li>Understood the ethical responsibilities tied to AI leadership.</li>
+        <li>Recognized the value of reflection in reinforcing technical learning.</li>
       </ul>
     </div>
 
     <div class="tab-content" id="reflection">
       <h2>Reflection</h2>
-      <p>This portfolio piece gave me hands-on practice with advanced clustering workflows and deeper insight into real-world data complexity. The scenarios enhanced my awareness of how data imperfections impact model outcomes and helped me apply techniques like SMOTE, median imputation, and smoothing with confidence. It also showed me how critical the "pre" in preprocessing really is.</p>
-      <p>Through the ethical leadership component, I learned that bias in AI is not always about bad intentions—often it stems from omission, lack of voice, or misaligned goals. As I advance in this field, I will carry a dual commitment: to build high-performing models, and to ensure that the human stories behind data are acknowledged, respected, and safeguarded.</p>
+      <p>This assignment challenged me to think like both a machine learning engineer and a responsible leader. By working through three progressive data issues, I solidified my knowledge of preprocessing and evaluation methods while learning to justify decisions and handle uncertainty.</p>
+      <p>Reflecting on AI and bias through the lens of education reinforced my belief that technical mastery is incomplete without ethical grounding. I now approach AI projects with greater empathy and intention.</p>
     </div>
 
     <div class="tab-content" id="conclusion">
-      <h2>Conclusion & Future Work</h2>
-      <p>This artifact demonstrates how I combined machine learning rigor with ethical awareness in one integrated learning experience. Future improvements may include integrating DBSCAN or hierarchical clustering on education datasets, applying interpretability tools like SHAP, and formalizing an AI bias audit checklist. I will continue practicing responsible AI leadership by questioning assumptions, inviting feedback, and anchoring each solution in human impact.</p>
+      <h2>Conclusion</h2>
+      <p>This artifact strengthened both my practical and reflective capacities in AI. I plan to carry these strategies forward into future roles where both accuracy and accountability matter. I also aim to keep exploring bias mitigation techniques and stakeholder feedback models in real-world deployments.</p>
     </div>
   </div>
 
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja |
-      <a href="https://sites.google.com/view/shiyana-portfolio/home">Artifact 1</a> |
+      <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a> |
       <a href="https://shiyana.github.io/Portfolio2/">Artifact 2</a> |
       <a href="https://shiyana.github.io/Portfolio3/">Artifact 3</a> |
       <a href="https://shiyana.github.io/Portfolio4/">Artifact 4</a>
