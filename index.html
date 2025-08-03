@@ -3,105 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shiyana Jayanesan Shylaja | Portfolio</title>
+  <title>Artifact 4: Clustering Analysis with K-Means</title>
   <style>
-    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333;}
-    header {background: linear-gradient(90deg, #4a69bd, #1e3799); color: white; text-align: center; padding: 25px 15px;}
-    nav {background: #1e3799; text-align: center; padding: 12px 0;}
-    nav a {color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; transition: background 0.3s;}
-    nav a:hover {background: #60a3bc; border-radius: 5px;}
-    .container {max-width: 1100px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
-    h2, h3 {color: #1e3799;}
-    .links a {display: block; color: #1e3799; font-weight: bold; text-decoration: none; margin: 5px 0;}
-    .links a:hover {text-decoration: underline;}
-    .tabs button {background: #1e3799; color: white; border: none; padding: 10px 15px; margin: 5px; cursor: pointer; border-radius: 5px;}
-    .tabs button:hover {background: #60a3bc;}
-    .tab-section {display: none; margin-top: 15px;}
-    .tab-section.active {display: block;}
-    .charts img {max-width: 48%; margin: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);}
-    .charts {display: flex; flex-wrap: wrap; justify-content: space-around;}
-    footer {text-align: center; padding: 15px; background: linear-gradient(90deg, #1e3799, #4a69bd); color: white; font-size: 14px;}
+    body { font-family: Arial, sans-serif; background-color: #f4f8fb; color: #333; margin: 0; padding: 0; }
+    header, footer { background-color: #1e3799; color: white; text-align: center; padding: 20px; }
+    .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    h1, h2, h3 { color: #1e3799; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .tabs button { background: #1e3799; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+    .tabs button:hover { background: #60a3bc; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .charts img { max-width: 90%; margin: 10px auto; display: block; border: 1px solid #ccc; border-radius: 5px; }
+    a { color: #ffffff; text-decoration: underline; }
   </style>
   <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     }
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('overview').classList.add('active');
+      showTab('overview');
     });
   </script>
 </head>
 <body>
   <header>
-    <h1>Shiyana Jayanesan Shylaja</h1>
-    <p>Portfolio Artifacts - AI/ML Projects</p>
+    <h1>Artifact 4: Clustering Analysis with K-Means</h1>
+    <p>Shiyana Jayanesan Shylaja | Machine Learning Portfolio</p>
   </header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#artifact3">Artifact 3</a>
-    <a href="#reflection">Reflection</a>
-    <a href="#class-activity">Class Activity</a>
-  </nav>
-  <div class="container" id="home">
-    <h2>Welcome to My Portfolio</h2>
-    <p>This portfolio showcases my AI/ML coursework artifacts and assignments, highlighting my expertise in unsupervised learning, data visualization, and problem-solving.</p>
-    <div class="links">
-      <p><a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1: Professional Portfolio</a></p>
-      <p><a href="https://shiyana.github.io/Portfolio2/#experience" target="_blank">Artifact 2: Advanced AI/ML Skills</a></p>
-    </div>
-  </div>
-  <div class="container" id="artifact3">
-    <h2>Artifact 3: Clustering Analysis with K-Means</h2>
+
+  <div class="container">
     <div class="tabs">
       <button onclick="showTab('overview')">Overview</button>
       <button onclick="showTab('process')">Process</button>
-      <button onclick="showTab('challenges')">Challenges & Solutions</button>
+      <button onclick="showTab('challenges')">Challenges</button>
       <button onclick="showTab('takeaways')">Key Takeaways</button>
-      <button onclick="showTab('conclusion')">Conclusion & Future Improvements</button>
+      <button onclick="showTab('reflection')">Reflection</button>
+      <button onclick="showTab('conclusion')">Conclusion</button>
     </div>
-    <div class="tab-section" id="overview">
-      <h3>Overview</h3>
-      <p>This artifact demonstrates the use of K-Means clustering to segment customer data and reveal hidden patterns. It includes the motivation for selecting K-Means, its mathematical background, and its application in data-driven business strategies.</p>
+
+    <div class="tab-content" id="overview">
+      <h2>Overview</h2>
+      <p>This artifact demonstrates my technical application of K-Means clustering in a real-world setting, along with the integration of class-based chatbot scenario exercises that explored core ML challenges—handling missing data, noisy datasets, and class imbalance. Through the activity, I refined practical skills in data preprocessing using imputation, smoothing, and balancing techniques.</p>
+      <p>In parallel, I developed ethical leadership skills in AI through a value-driven reflection on "Navigating Human Bias as a Leader in AI and Education." The activity emphasized strategies like inclusive design, fairness audits, bias-aware training, and stakeholder engagement, especially in education and healthcare sectors where algorithmic decisions have long-term impacts.</p>
+      <p>This artifact bridges theory and practice, showcasing my growing confidence in both technical ML execution and ethical leadership—essential for today’s AI professionals.</p>
     </div>
-    <div class="tab-section" id="process">
-      <h3>Process</h3>
-      <p><strong>Step 1:</strong> Data Cleaning and Preprocessing – removed missing values, normalized features, and handled skewed data.<br><strong>Step 2:</strong> Used Elbow Method and Silhouette Score to determine the optimal number of clusters (3).<br><strong>Step 3:</strong> Implemented K-Means algorithm with multiple centroid initializations for stability.<br><strong>Step 4:</strong> Visualized the clusters using 2D scatter plots and evaluated them using silhouette analysis.<br><strong>Step 5:</strong> Interpreted cluster behavior to generate actionable business insights and recommendations.</p>
+
+    <div class="tab-content" id="process">
+      <h2>Process</h2>
+      <p>
+        <strong>Step 1:</strong> Loaded dataset and handled missing values using median imputation.<br>
+        <strong>Step 2:</strong> Detected noisy sensor readings and smoothed them using rolling average.<br>
+        <strong>Step 3:</strong> Used Elbow and Silhouette methods to determine optimal k for K-Means.<br>
+        <strong>Step 4:</strong> Applied SMOTE for class imbalance in separate classification practice.<br>
+        <strong>Step 5:</strong> Applied K-Means clustering and visualized segments for business insight.
+      </p>
       <div class="charts">
-        <img src="elbow-method.png" alt="Elbow Method Graph">
+        <h3>Elbow Method</h3>
+        <img src="elbow-method.png" alt="Elbow Method Chart">
+
+        <h3>Silhouette Scores</h3>
+        <img src="silhouette.png" alt="Silhouette Score Chart">
+
+        <h3>Cluster Visualization</h3>
         <img src="clusters.png" alt="Cluster Visualization">
       </div>
     </div>
-    <div class="tab-section" id="challenges">
-      <h3>Challenges & Solutions</h3>
+
+    <div class="tab-content" id="challenges">
+      <h2>Challenges & Solutions</h2>
       <ul>
-        <li><strong>Challenge:</strong> Ambiguity in selecting the correct number of clusters.<br><strong>Solution:</strong> Applied both Elbow and Silhouette methods to confirm the decision.</li>
-        <li><strong>Challenge:</strong> Outliers skewing the cluster centroids.<br><strong>Solution:</strong> Outlier detection and feature scaling were performed.</li>
+        <li><strong>Imbalanced data:</strong> Solved with SMOTE and model-specific class weights.</li>
+        <li><strong>Noisy readings:</strong> Used moving averages and statistical methods to clean signal data.</li>
+        <li><strong>Choosing optimal clusters:</strong> Addressed using Elbow and Silhouette plots for evaluation.</li>
       </ul>
     </div>
-    <div class="tab-section" id="takeaways">
-      <h3>Key Takeaways</h3>
+
+    <div class="tab-content" id="takeaways">
+      <h2>Key Takeaways</h2>
       <ul>
-        <li>Comprehensive understanding of unsupervised learning and clustering techniques.</li>
-        <li>Enhanced data preprocessing and visualization capabilities.</li>
-        <li>Ability to interpret and explain clustering results for decision-making.</li>
+        <li>Practical chatbot-based activities reinforced critical thinking for real-world ML problems.</li>
+        <li>Visualization and data exploration are key to deriving value from clustering techniques.</li>
+        <li>Data quality (missing, noisy, imbalanced) must be managed carefully before modeling.</li>
+        <li>Ethical leadership in AI involves building inclusive systems from design to deployment.</li>
+        <li>Reflection helped connect data science techniques with personal values and career goals.</li>
       </ul>
     </div>
-    <div class="tab-section" id="conclusion">
-      <h3>Conclusion & Future Improvements</h3>
-      <p>This artifact demonstrates a practical application of K-Means clustering to real-world datasets. Future work may involve exploring advanced clustering techniques like DBSCAN or hierarchical clustering and incorporating dimensionality reduction techniques such as PCA for better visualization.</p>
+
+    <div class="tab-content" id="reflection">
+      <h2>Reflection</h2>
+      <p>This artifact helped me understand that mastering ML involves not only applying algorithms but knowing when and how to intervene based on data characteristics. The chatbot-driven exercises provided a structured space to work through complex data scenarios while reinforcing good practices. I learned that strategy and technical accuracy both matter, especially when systems impact people’s lives.</p>
+      <p>The leadership activity made me reflect deeply on my role as an AI developer and the values I bring into my work. I now view fairness, stakeholder voice, and algorithmic accountability as essential pillars—not optional features—in responsible AI.</p>
+    </div>
+
+    <div class="tab-content" id="conclusion">
+      <h2>Conclusion & Future Work</h2>
+      <p>Going forward, I want to implement clustering on larger education datasets and compare K-Means with DBSCAN or Agglomerative clustering. I will also continue to develop leadership skills that prioritize inclusion and transparency. This artifact represents the synergy of practical machine learning skills and ethical intent—both of which define a responsible AI career.</p>
     </div>
   </div>
-  <div class="container" id="reflection">
-    <h2>Reflection</h2>
-    <p>This artifact highlights my skills in clustering, from data preparation to visualization. I focused on creating clear, actionable insights, with lessons on iterative testing, feature engineering, and model validation. Peer feedback on visual clarity improved the final output.</p>
-  </div>
-  <div class="container" id="class-activity">
-    <h2>Class Activity</h2>
-    <p>This section captures my experience with a guided AI/ML training chatbot activity. The chatbot provided real-time explanations of machine learning concepts, including supervised vs. unsupervised learning. It also assisted with problem-solving approaches, helping me strengthen my understanding of K-Means and related algorithms. Key highlights include interactive Q&A and step-by-step guidance during hands-on exercises.</p>
-  </div>
+
   <footer>
-    <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
+    <p>&copy; 2025 Shiyana Jayanesan Shylaja |
+      <a href="https://sites.google.com/view/shiyana-portfolio/home">Artifact 1</a> |
+      <a href="https://shiyana.github.io/Portfolio2/">Artifact 2</a> |
+      <a href="https://shiyana.github.io/Portfolio3/">Artifact 3</a> |
+      <a href="https://shiyana.github.io/Portfolio4/">Artifact 4</a>
+    </p>
   </footer>
 </body>
 </html>
