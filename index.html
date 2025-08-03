@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artifact 4: Machine Learning Scenarios and Ethical Reflection</title>
+  <title>Artifact 4: Machine Learning Challenges & Ethical Leadership</title>
   <style>
     body { font-family: Arial, sans-serif; background-color: #f4f8fb; color: #333; margin: 0; padding: 0; }
     header, footer { background-color: #1e3799; color: white; text-align: center; padding: 20px; }
@@ -14,8 +14,9 @@
     .tabs button:hover { background: #60a3bc; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
-    .charts img { max-width: 90%; margin: 10px auto; display: block; border: 1px solid #ccc; border-radius: 5px; }
+    .charts img { max-width: 100%; margin: 10px auto; display: block; border: 1px solid #ccc; border-radius: 5px; }
     a { color: #ffffff; text-decoration: underline; }
+    ul { line-height: 1.8; }
   </style>
   <script>
     function showTab(id) {
@@ -29,8 +30,8 @@
 </head>
 <body>
   <header>
-    <h1>Artifact 4: Machine Learning Scenarios and Ethical Reflection</h1>
-    <p>Shiyana Jayanesan Shylaja | Machine Learning Portfolio</p>
+    <h1>Artifact 4: Machine Learning Scenarios & Ethical Leadership</h1>
+    <p>Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </header>
 
   <div class="container">
@@ -45,55 +46,75 @@
 
     <div class="tab-content" id="overview">
       <h2>Overview</h2>
-      <p>This artifact captures my engagement with three real-world machine learning problem scenarios guided by a chatbot, complemented by a leadership reflection on human bias in AI and education. Through structured exercises, I tackled missing data, noisy sensor readings, and class imbalance. Each scenario included decision-making processes, strategies, and coding examples.</p>
-      <p>These were paired with ethical reflections on leadership in the AI space, where I explored inclusive design, data audits, and stakeholder involvement. The integration of technical analysis and reflective writing provided a holistic foundation in practical and principled machine learning practices.</p>
+      <p>This portfolio artifact encapsulates an interactive journey into three critical machine learning (ML) challenges — missing data, noisy data, and class imbalance — tackled through a real-time collaboration with an AI chatbot. Each scenario presented increasing complexity, allowing me to progressively enhance my data handling skills and decision-making frameworks. The experience was grounded in hands-on coding practices and supported by algorithmic reasoning.</p>
+      <p>This activity was more than a technical exercise—it was a simulation of critical thinking, decision-making, and AI collaboration. The AI chatbot acted as a peer, guiding me through different layers of preprocessing strategy based on real-world examples. It was my first experience with reflective AI dialogue that emphasized reasoning, not just results. This shaped my awareness of what it means to be both a data scientist and a responsible designer.</p>
+      <p>In parallel, I developed a leadership perspective on human bias in AI, particularly in educational settings. This included reflections on value-centered leadership, strategies for bias mitigation, and the role of inclusive design. These elements helped connect technical aptitude with ethical responsibility, forming a comprehensive artifact that represents both skill development and professional growth.</p>
     </div>
 
     <div class="tab-content" id="process">
       <h2>Process</h2>
       <p>
-        <strong>Step 1:</strong> Analyzed missing data patterns and applied imputation techniques using Pandas and SimpleImputer.<br>
-        <strong>Step 2:</strong> Cleaned noisy sensor signals using moving average and statistical outlier removal.<br>
-        <strong>Step 3:</strong> Used SMOTE and class weighting to manage class imbalance in rare disease prediction.<br>
-        <strong>Step 4:</strong> Documented reflections and applied learnings on ethical leadership.
+        <strong>Step 1:</strong> Conducted exploratory data analysis (EDA) to detect missing values and patterns.<br>
+        <strong>Step 2:</strong> Applied median imputation and predictive modeling to restore missing data.<br>
+        <strong>Step 3:</strong> Cleaned noisy datasets using moving averages, smoothing filters, and anomaly filtering.<br>
+        <strong>Step 4:</strong> Addressed class imbalance using SMOTE, ensemble techniques, and weighted classifiers.<br>
+        <strong>Step 5:</strong> Wrote reflections on AI ethics, bias mitigation, and community-centered innovation in education.<br>
       </p>
     </div>
 
     <div class="tab-content" id="scenarios">
       <h2>Chatbot-Guided ML Scenarios</h2>
-      <p><strong>Scenario 1 – Missing Data:</strong> Explored strategies such as median imputation, predictive modeling, and missingness flags using Python.</p>
-      <p><strong>Scenario 2 – Noisy Data:</strong> Applied visualization, smoothing techniques, and rolling averages to clean data and improve signal clarity.</p>
-      <p><strong>Scenario 3 – Imbalanced Data:</strong> Utilized SMOTE and model evaluation metrics (F1-score, ROC-AUC) to counter bias in rare event classification.</p>
+      <h3>Scenario 1 – Missing Data</h3>
+      <p>Used strategies like MCAR/MAR detection, median imputation, regression-based imputation, and missingness flagging. The chatbot supported with both techniques and rationale for method selection.</p>
+      <h3>Scenario 2 – Noisy Sensor Data</h3>
+      <p>Preprocessing included visualization, IQR-based outlier filtering, rolling mean smoothing, and signal denoising using exponential methods.</p>
+      <h3>Scenario 3 – Class Imbalance</h3>
+      <p>Addressed imbalance with SMOTE, class-weighted classifiers (Random Forest), AUC-ROC and F1 metrics, and anomaly detection options like Isolation Forest and autoencoders.</p>
+      <div class="charts">
+        <h3>Supporting Visualizations</h3>
+        <p><strong>Elbow Method (Cluster Optimization)</strong></p>
+        <img src="elbow-method.png" alt="Elbow Method Graph">
+        <p><strong>Outlier Detection (Boxplot)</strong></p>
+        <img src="boxplot-outliers.png" alt="Outlier Detection Graph">
+        <p><strong>SMOTE Applied (Class Balance)</strong></p>
+        <img src="smote-balance.png" alt="Class Imbalance Handled with SMOTE">
+      </div>
     </div>
 
     <div class="tab-content" id="takeaways">
       <h2>Key Takeaways</h2>
       <ul>
-        <li>Handled real-world data challenges in a structured and repeatable way.</li>
-        <li>Learned to select the right preprocessing techniques based on data quality issues.</li>
-        <li>Understood the ethical responsibilities tied to AI leadership.</li>
-        <li>Recognized the value of reflection in reinforcing technical learning.</li>
+        <li>Gained confidence in handling real-world ML data problems using Python and scikit-learn.</li>
+        <li>Improved my ability to justify modeling decisions with data-centric reasoning.</li>
+        <li>Developed ethical sensitivity and leadership strategies around fairness in AI, especially in education.</li>
+        <li>Learned to balance data precision with inclusive design, transparency, and stakeholder impact.</li>
       </ul>
     </div>
 
     <div class="tab-content" id="reflection">
       <h2>Reflection</h2>
-      <p>This assignment challenged me to think like both a machine learning engineer and a responsible leader. By working through three progressive data issues, I solidified my knowledge of preprocessing and evaluation methods while learning to justify decisions and handle uncertainty.</p>
-      <p>Reflecting on AI and bias through the lens of education reinforced my belief that technical mastery is incomplete without ethical grounding. I now approach AI projects with greater empathy and intention.</p>
+      <p>This activity helped me transition from a technical learner to a reflective practitioner. Engaging with the chatbot not only reinforced my knowledge of data preprocessing but also challenged my assumptions and reasoning. The simulated conversations mimicked real-world problem-solving environments, preparing me for roles requiring both analytical and communicative strengths.</p>
+      <p>In parallel, reflecting on my leadership values around bias and equity in education pushed me to internalize the role of a responsible AI professional. These dual strands — technical mastery and ethical reflection — have become the foundation of my personal growth throughout this course.</p>
+      <h3>Questions I’m Exploring Further</h3>
+      <ul>
+        <li>When should I prefer predictive modeling over median imputation in sensitive healthcare datasets?</li>
+        <li>How do signal processing filters preserve important features without over-smoothing?</li>
+        <li>How can I set optimal classification thresholds for recall-sensitive applications like rare disease detection?</li>
+      </ul>
     </div>
 
     <div class="tab-content" id="conclusion">
       <h2>Conclusion</h2>
-      <p>This artifact strengthened both my practical and reflective capacities in AI. I plan to carry these strategies forward into future roles where both accuracy and accountability matter. I also aim to keep exploring bias mitigation techniques and stakeholder feedback models in real-world deployments.</p>
+      <p>This artifact is a culmination of my applied learning in AI/ML from this course. I intend to integrate these insights into future roles by advocating for AI practices that are both technically sound and socially responsible. My future projects will prioritize data transparency, diverse representation, and iterative stakeholder feedback to ensure the AI systems I help design are equitable and impactful.</p>
     </div>
   </div>
 
   <footer>
     <p>&copy; 2025 Shiyana Jayanesan Shylaja |
       <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a> |
-      <a href="https://shiyana.github.io/Portfolio2/">Artifact 2</a> |
-      <a href="https://shiyana.github.io/Portfolio3/">Artifact 3</a> |
-      <a href="https://shiyana.github.io/Portfolio4/">Artifact 4</a>
+      <a href="https://shiyana.github.io/Portfolio2/" target="_blank">Artifact 2</a> |
+      <a href="https://shiyana.github.io/Portfolio3/" target="_blank">Artifact 3</a> |
+      <a href="https://shiyana.github.io/Portfolio4/" target="_blank">Artifact 4</a>
     </p>
   </footer>
 </body>
