@@ -1,98 +1,171 @@
-from pathlib import Path
+import os
 
-# Full HTML content with tabs and overview diagram embedded
+# Directory for saving the output
+output_dir = "/mnt/data/Portfolio4_Expanded"
+os.makedirs(output_dir, exist_ok=True)
+
+# Start of the HTML content
 html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Artifact 4: K-Means Clustering</title>
-  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artifact 4: Clustering Analysis with K-Means</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #2d3436;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #0984e3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #0984e3;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .tabs button {
+      background: #0984e3;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .tabs button:hover {
+      background-color: #74b9ff;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .content-section {
+      margin-bottom: 40px;
+    }
+    .content-section h3 {
+      margin-top: 20px;
+      color: #2d3436;
+    }
+  </style>
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      showTab('overview');
+    });
+  </script>
 </head>
 <body>
-  <div id="root"></div>
+  <header>
+    <h1>Artifact 4: Clustering Analysis with K-Means</h1>
+    <p>Shiyana Jayanesan Shylaja | Machine Learning Portfolio</p>
+  </header>
 
-  <script type="text/babel">
-    const { useRef, useEffect } = React;
+  <div class="container">
+    <div class="tabs">
+      <button onclick="showTab('overview')">Overview</button>
+      <button onclick="showTab('process')">Process</button>
+      <button onclick="showTab('challenges')">Challenges</button>
+      <button onclick="showTab('takeaways')">Key Takeaways</button>
+      <button onclick="showTab('reflection')">Reflection</button>
+      <button onclick="showTab('conclusion')">Conclusion</button>
+    </div>
 
-    const ChartComponent = ({ type, data, options }) => {
-      const chartRef = useRef(null);
-      useEffect(() => {
-        const ctx = chartRef.current.getContext('2d');
-        new Chart(ctx, { type, data, options });
-      }, [type, data, options]);
-      return <canvas ref={chartRef} />;
-    };
-
-    const TabContent = ({ id, title, children }) => (
-      <section id={id} className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{title}</h2>
-        {children}
-      </section>
-    );
-
-    const Portfolio = () => (
-      <div className="container mx-auto p-6 bg-gray-100 min-h-screen">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-blue-800">Portfolio Artifact 4: K-Means Clustering</h1>
-          <p className="text-lg text-gray-600 mt-2">Shiyana Jayanesan Shylaja | Machine Learning Portfolio</p>
-        </header>
-
-        <nav className="mb-6">
-          <ul className="flex justify-center space-x-6">
-            {["overview", "process", "challenges", "key-takeaways", "reflection", "conclusion"].map(tab => (
-              <li key={tab}><a href={`#${tab}`} className="text-blue-500 hover:text-blue-700 capitalize">{tab.replace("-", " ")}</a></li>
-            ))}
-          </ul>
-        </nav>
-
-        <TabContent id="overview" title="Overview">
-          <p className="text-gray-700 mb-4">This project showcases my application of unsupervised learning through K-Means clustering...</p>
-          <img src="A_digital_flowchart_visualizes_a_class_activity_in.png" alt="Overview Flowchart" style={{ maxWidth: "100%" }} />
-        </TabContent>
-
-        <TabContent id="process" title="Process">
-          <p className="text-gray-700">[Full Process Content Here]</p>
-        </TabContent>
-
-        <TabContent id="challenges" title="Challenges">
-          <p className="text-gray-700">[Full Challenges Content Here]</p>
-        </TabContent>
-
-        <TabContent id="key-takeaways" title="Key Takeaways">
-          <p className="text-gray-700">[Full Key Takeaways Content Here]</p>
-        </TabContent>
-
-        <TabContent id="reflection" title="Reflection">
-          <p className="text-gray-700">[Full Reflection Content Here]</p>
-        </TabContent>
-
-        <TabContent id="conclusion" title="Conclusion">
-          <p className="text-gray-700">[Full Conclusion Content Here]</p>
-        </TabContent>
-
-        <footer className="text-center text-gray-500 mt-8">
-          <p>&copy; 2025 Shiyana Jayanesan Shylaja | 
-            <a href="https://shiyana.github.io/Portfolio4/" className="text-blue-500 hover:text-blue-700 ml-1">Portfolio4</a>
-          </p>
-        </footer>
+    <div class="tab-content" id="overview">
+      <h2>Overview</h2>
+      <div class="content-section">
+        <h3>Project Introduction</h3>
+        <p>This project focuses on unsupervised learning using K-Means clustering applied to a retail customer dataset. The goal was to segment customers into groups based on their income and spending score to enable strategic targeting.</p>
       </div>
-    );
+      <div class="content-section">
+        <h3>Scenario-Based Learning</h3>
+        <ul>
+          <li><strong>Missing Data:</strong> We used multiple imputation and median strategy to address data gaps while ensuring data integrity.</li>
+          <li><strong>Noisy Data:</strong> Outliers and random spikes were smoothed using rolling averages and z-score filtering.</li>
+          <li><strong>Class Imbalance:</strong> Though not directly part of clustering, we explored SMOTE and undersampling techniques during guided exercises.</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h3>Ethical Considerations</h3>
+        <p>This activity also allowed for deeper reflection on ethical leadership, fairness in AI, and human bias in dataset composition and model outcomes—topics discussed during the "Navigating Human Bias in AI" class workshop.</p>
+      </div>
+    </div>
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<Portfolio />);
-  </script>
+    <div class="tab-content" id="process">
+      <h2>Process</h2>
+      <p>Detailed 2000+ word content will be added here including code walkthroughs, step-by-step decisions, outputs, and intermediate visualizations.</p>
+    </div>
+
+    <div class="tab-content" id="challenges">
+      <h2>Challenges</h2>
+      <p>2000-word detailed breakdown including technical issues (e.g., selecting k, scaling), human-centered concerns (bias in clustering), and tools used to overcome these.</p>
+    </div>
+
+    <div class="tab-content" id="takeaways">
+      <h2>Key Takeaways</h2>
+      <p>This section will have 2000 words of lessons learned, visual summaries, list of concepts applied (e.g., normalization, cluster evaluation metrics), plus charts with annotations.</p>
+    </div>
+
+    <div class="tab-content" id="reflection">
+      <h2>Reflection</h2>
+      <p>This will include ethical leadership insights, connections to class activities, deeper analysis of AI fairness, and impact on your professional development—expanded to 2000 words with citations.</p>
+    </div>
+
+    <div class="tab-content" id="conclusion">
+      <h2>Conclusion & Future Work</h2>
+      <p>Final section summarizing impact, outlining roadmap for extending clustering to real-world applications, and proposing integration with supervised learning—expanded to 2000 words, point-wise.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Shiyana Jayanesan Shylaja |
+      <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a> |
+      <a href="https://shiyana.github.io/Portfolio2/" target="_blank">Artifact 2</a> |
+      <a href="https://shiyana.github.io/Portfolio3/" target="_blank">Artifact 3</a> |
+      <a href="https://shiyana.github.io/Portfolio4/">Artifact 4</a>
+    </p>
+  </footer>
 </body>
 </html>
 """
 
-# Save to file
-file_path = Path("/mnt/data/index_with_tabs_and_diagram.html")
-file_path.write_text(html_content)
+# Save HTML file
+file_path = os.path.join(output_dir, "index.html")
+with open(file_path, "w") as f:
+    f.write(html_content)
 
-file_path.name
+file_path
