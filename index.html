@@ -1,129 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artifact 4: Machine Learning Challenges & Ethical Leadership</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shiyana Jayanesan Shylaja - Artifact 3 Portfolio" />
+  <title>Shiyana Jayanesan Shylaja | Artifact 3 - Clustering Analysis</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f4f8fb; color: #333; margin: 0; padding: 0; }
-    header, footer { background-color: #1e3799; color: white; text-align: center; padding: 20px; }
-    .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #1e3799; }
-    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-    .tabs button { background: #1e3799; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
-    .tabs button:hover { background: #60a3bc; }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-    .charts img { max-width: 100%; margin: 10px auto; display: block; border: 1px solid #ccc; border-radius: 5px; }
-    a { color: #ffffff; text-decoration: underline; }
-    ul { line-height: 1.8; }
-  </style>
-  <script>
-    function showTab(id) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
     }
-    document.addEventListener('DOMContentLoaded', () => {
-      showTab('overview');
-    });
-  </script>
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    p {
+      line-height: 1.5;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: #fff;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Artifact 4: Machine Learning Scenarios & Ethical Leadership</h1>
-    <p>Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
+    <h1>Shiyana Jayanesan Shylaja</h1>
+    <p>Professional Portfolio - Artifact 3</p>
   </header>
 
   <div class="container">
-    <div class="tabs">
-      <button onclick="showTab('overview')">Overview</button>
-      <button onclick="showTab('process')">Process</button>
-      <button onclick="showTab('scenarios')">Scenarios</button>
-      <button onclick="showTab('takeaways')">Key Takeaways</button>
-      <button onclick="showTab('reflection')">Reflection</button>
-      <button onclick="showTab('conclusion')">Conclusion</button>
-    </div>
+    <section>
+      <h2>Artifact 3: Clustering Analysis with K-Means</h2>
+      <p><strong>Title:</strong> Customer Segmentation with K-Means Clustering</p>
+      <p><strong>Objective:</strong> To apply unsupervised learning techniques for data segmentation, discovering hidden patterns, and visualizing clusters.</p>
+      <p><strong>Process:</strong> Data preprocessing (cleaning, scaling), determining optimal clusters using Elbow and Silhouette methods, applying K-Means, and visualizing results with 2D scatter plots.</p>
+      <p><strong>Tools & Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
+      <p><strong>Value Proposition:</strong> This artifact demonstrates expertise in unsupervised machine learning and the ability to uncover actionable insights from unlabeled data.</p>
+      <p><strong>Key Results:</strong> Identified 3 optimal clusters with a silhouette score of 0.72, delivering clear, interpretable groupings.</p>
+    </section>
 
-    <div class="tab-content" id="overview">
-      <h2>Overview</h2>
-      <p>This artifact represents a hands-on, chatbot-guided walkthrough of three real-world machine learning challenges: handling missing data, managing noisy sensor readings, and working with imbalanced datasets. Through guided problem-solving discussions, technical explanations, and reflective feedback, I explored how theoretical concepts apply to practice. Each scenario included coding techniques, algorithmic reasoning, and interactive follow-up questions.</p>
-      <p>Alongside this, I completed a value-based leadership reflection titled "Navigating Human Bias in AI and Education," which explored fairness in algorithmic design, particularly in the education sector. This artifact reflects a synthesis of technical proficiency and ethical leadership, emphasizing that AI professionals must be both data-competent and socially aware.</p>
-    </div>
-
-    <div class="tab-content" id="process">
-      <h2>Process</h2>
-      <p>
-        <strong>Step 1:</strong> Used Python to load and explore health and sensor datasets.<br>
-        <strong>Step 2:</strong> Detected missingness patterns (MCAR, MAR) and applied median, regression, and flagging strategies.<br>
-        <strong>Step 3:</strong> Handled noise using smoothing filters, moving averages, and visual diagnostics.<br>
-        <strong>Step 4:</strong> Addressed class imbalance using SMOTE, weighted classifiers, and precision-recall metrics.<br>
-        <strong>Step 5:</strong> Completed leadership reflection linking ethics to AI project design.<br>
-        <strong>Tools:</strong> pandas, sklearn, seaborn, imbalanced-learn, Jupyter, Google Colab.
-      </p>
-    </div>
-
-    <div class="tab-content" id="scenarios">
-      <h2>Chatbot-Guided ML Scenarios</h2>
-      <h3>Scenario 1: Missing Data</h3>
-      <p><strong>Problem:</strong> Missing patient data (age, weight) in a health dataset.</p>
-      <p><strong>Solution:</strong> Imputed missing values using median and regression. Flagged missingness. Explored impact using data visualization.</p>
-      <pre><code>from sklearn.impute import SimpleImputer
-imputer = SimpleImputer(strategy='median')
-df[['age', 'weight']] = imputer.fit_transform(df[['age', 'weight']])</code></pre>
-      <p><strong>Reflection:</strong> Learned to balance completeness with bias prevention.</p>
-
-      <h3>Scenario 2: Noisy Data</h3>
-      <p><strong>Problem:</strong> Sensor data with spikes and fluctuations distorted trends.</p>
-      <p><strong>Solution:</strong> Used IQR-based outlier removal, rolling means, and exponential smoothing to denoise.</p>
-      <pre><code>df['smoothed'] = df['reading'].rolling(window=5, center=True).mean()</code></pre>
-      <p><strong>Reflection:</strong> Gained confidence in tuning smoothing methods without losing critical info.</p>
-
-      <h3>Scenario 3: Imbalanced Dataset</h3>
-      <p><strong>Problem:</strong> Disease classification with very few positive examples (5%).</p>
-      <p><strong>Solution:</strong> Used SMOTE to oversample and class-weighted models to train with AUC and F1 evaluation.</p>
-      <pre><code>from imblearn.over_sampling import SMOTE
-smote = SMOTE()
-X_res, y_res = smote.fit_resample(X, y)</code></pre>
-      <p><strong>Reflection:</strong> Learned the importance of using precision-recall over accuracy in medical AI tasks.</p>
-
-      <div class="charts">
-        <h3>Supporting Visualizations</h3>
-        <img src="elbow-method.png" alt="Elbow Method">
-        <img src="boxplot-outliers.png" alt="Outliers in Noisy Data">
-        <img src="smote-balance.png" alt="SMOTE Class Balance">
-      </div>
-    </div>
-
-    <div class="tab-content" id="takeaways">
-      <h2>Key Takeaways</h2>
-      <ul>
-        <li>Handled three common ML problems using real-world workflows.</li>
-        <li>Practiced justifying imputation and resampling decisions.</li>
-        <li>Improved sensitivity to ethical and fairness concerns in AI.</li>
-        <li>Learned how leadership intersects with responsible tech design.</li>
-      </ul>
-    </div>
-
-    <div class="tab-content" id="reflection">
+    <section>
       <h2>Reflection</h2>
-      <p>This course helped me move beyond just running models. The chatbot dialogue format challenged my assumptions, guided me through better methods, and taught me to always reason out loud.</p>
-      <p>My leadership statement on bias in education deepened my understanding of how human values affect algorithm design. It’s not just about models, but about impact.</p>
-      <p>Next, I want to explore threshold tuning for medical AI and understand the implications of missingness indicators.</p>
-    </div>
-
-    <div class="tab-content" id="conclusion">
-      <h2>Conclusion</h2>
-      <p>This artifact was a deeply reflective technical and ethical exercise. It helped me strengthen both my data preprocessing skills and ethical reasoning as an emerging AI leader.</p>
-    </div>
+      <p>
+        I selected this artifact because it showcases a unique machine learning skill—unsupervised clustering—that complements my earlier work on supervised models. This project helped me understand how to identify patterns without labeled data and reinforced my data visualization skills. I refined the artifact for a professional audience by including the Elbow Method and Silhouette visualizations, making the results more interpretable. Peer feedback prompted me to add detailed documentation of the process and practical insights, which I implemented. This artifact adds variety to my portfolio and demonstrates my ability to analyze data in a more exploratory and insightful way.
+      </p>
+    </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 Shiyana Jayanesan Shylaja |
-      <a href="https://sites.google.com/view/shiyana-portfolio/home" target="_blank">Artifact 1</a> |
-      <a href="https://shiyana.github.io/Portfolio2/" target="_blank">Artifact 2</a> |
-      <a href="https://shiyana.github.io/Portfolio3/" target="_blank">Artifact 3</a> |
-      <a href="https://shiyana.github.io/Portfolio4/" target="_blank">Artifact 4</a>
-    </p>
+    <p>&copy; 2025 Shiyana Jayanesan Shylaja | AI/ML Portfolio</p>
   </footer>
 </body>
 </html>
