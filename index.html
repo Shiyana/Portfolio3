@@ -1,12 +1,4 @@
-import os
-import zipfile
-
-# Directory for final expanded portfolio
-expanded_portfolio_path = "/mnt/data/Portfolio3_Expanded"
-os.makedirs(expanded_portfolio_path, exist_ok=True)
-
-# Expanded Artifact 3 HTML with dedicated tab and more content
-expanded_html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -230,24 +222,3 @@ expanded_html = """<!DOCTYPE html>
   </footer>
 </body>
 </html>
-"""
-
-# Save the HTML file
-with open(os.path.join(expanded_portfolio_path, "index.html"), "w") as f:
-    f.write(expanded_html)
-
-# Copy graphs if available
-for img in ["elbow-method.png", "clusters.png", "class_activity.png"]:
-    img_path = f"/mnt/data/Portfolio3_Graphs/{img}"
-    if os.path.exists(img_path):
-        os.system(f"cp '{img_path}' '{expanded_portfolio_path}/'")
-
-# Create ZIP
-expanded_zip_path = "/mnt/data/Portfolio3_Expanded.zip"
-with zipfile.ZipFile(expanded_zip_path, 'w') as zipf:
-    for root, dirs, files in os.walk(expanded_portfolio_path):
-        for file in files:
-            zipf.write(os.path.join(root, file),
-                       os.path.relpath(os.path.join(root, file), expanded_portfolio_path))
-
-expanded_zip_path
